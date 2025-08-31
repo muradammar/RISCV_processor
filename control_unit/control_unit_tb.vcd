@@ -1,0 +1,107 @@
+$date
+	Sat Aug 30 22:46:58 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module control_unit_tb $end
+$var wire 2 ! result_src [1:0] $end
+$var wire 1 " reg_write $end
+$var wire 1 # mem_write $end
+$var wire 1 $ jump $end
+$var wire 2 % imm_src [1:0] $end
+$var wire 1 & branch $end
+$var wire 1 ' alu_src $end
+$var wire 2 ( alu_op [1:0] $end
+$var reg 7 ) opcode [6:0] $end
+$scope module dut $end
+$var wire 7 * opcode [6:0] $end
+$var reg 2 + alu_op [1:0] $end
+$var reg 1 ' alu_src $end
+$var reg 1 & branch $end
+$var reg 11 , controls [10:0] $end
+$var reg 2 - imm_src [1:0] $end
+$var reg 1 $ jump $end
+$var reg 1 # mem_write $end
+$var reg 1 " reg_write $end
+$var reg 2 . result_src [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 .
+b0 -
+b10010010000 ,
+b0 +
+b11 *
+b11 )
+b0 (
+1'
+0&
+b0 %
+0$
+0#
+1"
+b1 !
+$end
+#10000
+0"
+b1 %
+b1 -
+1#
+b0 !
+b0 .
+b111000000 ,
+b100011 )
+b100011 *
+#20000
+1"
+b0 %
+b0 -
+0'
+0#
+b10 (
+b10 +
+b10000000100 ,
+b110011 )
+b110011 *
+#30000
+0"
+b10 %
+b10 -
+1&
+b1 (
+b1 +
+b1000001010 ,
+b1100011 )
+b1100011 *
+#40000
+1"
+b0 %
+b0 -
+1'
+0&
+b10 (
+b10 +
+b10010000100 ,
+b10011 )
+b10011 *
+#50000
+b11 %
+b11 -
+0'
+b10 !
+b10 .
+b0 (
+b0 +
+1$
+b11100100001 ,
+b1101111 )
+b1101111 *

@@ -1,0 +1,7 @@
+The following combinational and sequential elements are required to build the datapath
+
+- 2-input mux
+- 3-input mux
+- adder
+- resettable flip-flop (already implemented in /pc)
+- sign extender
