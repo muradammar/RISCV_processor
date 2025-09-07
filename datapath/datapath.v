@@ -9,7 +9,8 @@ module datapath(
     input clk,
     input reset,
     input [1:0] result_src,
-    input pc_src, alu_src, imm_src,
+    input pc_src, alu_src,
+    input [1:0] imm_src,
     input [3:0] alu_control,
     input reg_write,
     output reg [31:0] alu_res,
@@ -60,7 +61,7 @@ register_file reg_file (
     .write_ena(reg_write),
     .write_data(result), //from mux3
     .reg1_data(srcA),
-    .reg2_data(write_data),
+    .reg2_data(write_data)
 );
 
 extend imm_extend (
@@ -77,7 +78,7 @@ mux2 #(32) alumux(
 );
 
 //ALU
-reg [31:0] result;
+wire [31:0] result;
 
 alu ALU(
     .r1(srcA),
@@ -87,7 +88,7 @@ alu ALU(
     .zero(zero)
 );
 
-mux3 #(32) resultmuux(
+mux3 #(32) resultmux(
     .sel(result_src),
     .a(alu_res),
     .b(read_data),
