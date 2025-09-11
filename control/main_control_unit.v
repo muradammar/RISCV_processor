@@ -9,13 +9,13 @@ module main_control_unit(
     input [6:0] funct7,
     input [2:0] funct3,
     input zero, //from datapath
-    output reg reg_write,
-    output reg [1:0] imm_src,
-    output reg alu_src,
-    output reg pc_src,
-    output reg mem_write,
-    output reg [1:0] result_src,
-    output reg [3:0] alu_control
+    output wire reg_write,
+    output wire [1:0] imm_src,
+    output wire alu_src,
+    output wire pc_src,
+    output wire mem_write,
+    output wire [1:0] result_src,
+    output wire [3:0] alu_control
 );
 
     wire [1:0] alu_op; //this signal is used to control the alu_control
@@ -42,6 +42,6 @@ module main_control_unit(
     );
 
     //use target instr addr if branch is true or if jal
-    assign pc_src = branch & zero | jump;
+    assign pc_src = (branch & zero) | jump;
 
 endmodule

@@ -13,16 +13,16 @@ module datapath(
     input [1:0] imm_src,
     input [3:0] alu_control,
     input reg_write,
-    output reg [31:0] alu_res,
-    output reg zero,
-    output reg [31:0] PC, //address of the cur instr
-    output reg [31:0] write_data
+    output wire [31:0] alu_res,
+    output wire zero,
+    output wire [31:0] PC, //address of the cur instr
+    output wire [31:0] write_data
 );
 
 //program counter
-reg [31:0] pc_plus4; //the default next instruction to be executed
-reg [31:0] pc_target; //the instruction address from a BEQ or JAL instruction
-reg [31:0] pc_next; //the mux between the two above 
+wire [31:0] pc_plus4; //the default next instruction to be executed
+wire [31:0] pc_target; //the instruction address from a BEQ or JAL instruction
+wire [31:0] pc_next; //the mux between the two above 
 
 pc program_counter (
     .next_inst(pc_next),
@@ -51,7 +51,7 @@ mux2 #(32) pcmux( //determine next instr address based on pc_src
 );
 
 //register file
-reg [31:0] srcA, srcB, immext;
+wire [31:0] srcA, srcB, immext;
 
 register_file reg_file (
     .reg1_addr(instr[19:15]), //rs1

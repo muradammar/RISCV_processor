@@ -40,4 +40,20 @@ module tb_top;
         $finish; // End simulation
     end
 
+    integer cycle_count;
+
+    initial begin
+        cycle_count = 0;
+        $display("Time  | PC       | Instr     | WriteData | DataAddr | RegWrite | ALUControl | Zero | PC_src");
+        $monitor("%0t | %h | %h | %h | %h | %b | %b | %b | %b", 
+                $time, uut.pc, uut.riscv.instr, uut.write_data, uut.data_addr, 
+                uut.riscv.reg_write, uut.riscv.alu_control, uut.riscv.zero, uut.riscv.pc_src);
+    end
+
+    always @(posedge clk) begin
+        cycle_count = cycle_count + 1;
+        if (cycle_count >= 20) $finish;
+    end
+
+
 endmodule

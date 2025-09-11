@@ -12,7 +12,7 @@ module dm(
     output reg [31:0] read_data
 );
 
-reg [31:0] RAM [63:0]; //64 32-bit elements
+reg [31:0] RAM [0:63]; //64 32-bit elements
 
 //combinational reads
 always @ (*) begin

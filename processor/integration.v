@@ -6,9 +6,9 @@ to view signals, set them as outputs
 module top_module (
     input clk,
     input reset,
-    output reg [31:0] pc,
-    output reg [31:0] write_data,
-    output reg [31:0] data_addr
+    output wire [31:0] pc,
+    output wire [31:0] write_data,
+    output wire [31:0] data_addr
 );
 
 wire [31:0] instr;

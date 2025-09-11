@@ -9,7 +9,7 @@ module im(
     output reg [31:0] instr
 );
 
-reg [31:0] RAM [63:0]; //max capacity = 64 32-bit instructions
+reg [31:0] RAM [0:63]; //max capacity = 64 32-bit instructions
 
 //load program instructions from a text file
 initial $readmemh("riscv_program.txt", RAM);

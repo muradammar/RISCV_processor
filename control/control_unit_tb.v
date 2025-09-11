@@ -24,8 +24,6 @@ control_unit dut(
     .jump(jump)
 );
 
-
-
 initial begin
 
     $dumpfile("control_unit_tb.vcd");

@@ -49,7 +49,7 @@ datapath data_path(
     .imm_src(imm_src),
     .alu_control(alu_control),
     .reg_write(reg_write),
-    .alu_result(data_addr), //alu res serves as data_addr otherwise used internally
+    .alu_res(data_addr), //alu res serves as data_addr otherwise used internally
     .zero(zero),
     .PC(pc),
     .write_data(write_data)
